@@ -1,0 +1,74 @@
+{
+  "theme": "theme-white",
+  "social": [
+    {
+      "site": "vk",
+      "link": "https://vk.com/shuntikov_foto"
+    },
+    {
+      "site": "telegram",
+      "link": ""
+    },
+    {
+      "site": "facebook",
+      "link": "https://www.facebook.com/shuntikov/"
+    },
+    {
+      "site": "instagram",
+      "link": "https://www.instagram.com/shuntikov/"
+    }
+  ],
+  "menu": [
+    {
+      "type": "page",
+      "name": "PriceList"
+    },
+    {
+      "type": "album-collection",
+      "name": "wedding",
+      "cover": "cover.jpg",
+      "albums": [
+        "wedding 1",
+        "wedding 2",
+        "wedding 3",
+        "wedding 4",
+        "wedding 5",
+        "wedding 6",
+        "wedding 7",
+        "wedding 8",
+        "wedding 9",
+        "wedding 10",
+        "wedding 11",
+        "wedding 12",
+        "wedding 13",
+        "wedding 14",
+        "wedding 15",
+        "wedding 16"
+      ]
+    },
+    {
+      "type": "album-collection",
+      "name": "fashion",
+      "cover": "fashion-cover.jpg",
+      "albums": [
+        "fashion 1",
+        "fashion 2",
+        "fashion 3"
+      ]
+    },
+    {
+      "type": "page",
+      "name": "Backstage",
+      "description": "Бэкстейдж моих фотосъемок",
+      "videos": [
+        "url-1",
+        "url-2",
+        "url-3"
+      ]
+    },
+    {
+      "type": "page",
+      "name": "Contacts"
+    }
+  ]
+}
