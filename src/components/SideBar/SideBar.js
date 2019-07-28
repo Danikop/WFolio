@@ -1,7 +1,5 @@
 import React from 'react';
 import './SideBar.css'
-import logo from '../../assets/logo.png'
-import {Link} from "react-router-dom";
 import Logo from "../Logo/Logo";
 
 class SideBar extends React.Component {
@@ -11,7 +9,7 @@ class SideBar extends React.Component {
           <div className="sidebar-background"
                style={{
                  backgroundColor: 'rgb(94, 87, 75)',
-                 backgroundImage: this.props.img
+                 backgroundImage: `url("${this.props.img}")`
                }}>
           </div>
           <Logo/>

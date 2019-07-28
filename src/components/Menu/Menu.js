@@ -10,7 +10,8 @@ class Menu extends React.Component {
             {this.props.children.map(item =>
                 <li className="menu-item">
                   <Link className="link"
-                        to={item.link}>
+                        to={item.link}
+                        onClick={item.onClick}>
                     {item.name}
                   </Link>
                 </li>)}

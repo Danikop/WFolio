@@ -30,7 +30,7 @@ html, body, #root, .app, .main {
     z-index: 200;
     top: 0;
     padding: 20px 0;
-    background: rgba(36,37,38,0.95);
+    background: #242526F0;
 }
 
 ::-webkit-scrollbar {

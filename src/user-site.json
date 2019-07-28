@@ -21,12 +21,14 @@
   "menu": [
     {
       "type": "page",
-      "name": "PriceList"
+      "name": "Price",
+      "cover": "content/covers/price.jpg",
+      "homepage": true
     },
     {
       "type": "album-collection",
       "name": "wedding",
-      "cover": "cover.jpg",
+      "cover": "content/covers/wedding.jpg",
       "albums": [
         "wedding 1",
         "wedding 2",
@@ -49,7 +51,7 @@
     {
       "type": "album-collection",
       "name": "fashion",
-      "cover": "fashion-cover.jpg",
+      "cover": "content/covers/fashion.jpg",
       "albums": [
         "fashion 1",
         "fashion 2",
@@ -60,6 +62,7 @@
       "type": "page",
       "name": "Backstage",
       "description": "Бэкстейдж моих фотосъемок",
+      "cover": "content/covers/backstage.jpg",
       "videos": [
         "url-1",
         "url-2",
@@ -68,7 +71,8 @@
     },
     {
       "type": "page",
-      "name": "Contacts"
+      "name": "Contacts",
+      "cover": "content/covers/contacts.jpg"
     }
   ]
 }
