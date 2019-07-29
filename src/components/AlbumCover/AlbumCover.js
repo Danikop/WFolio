@@ -19,7 +19,7 @@ class AlbumCover extends React.Component {
               <img className="lazyautosizes lazyloaded" data-sizes="auto"
                   //data-src={this.props.uri}
                    src={this.props.cover}
-              />
+                   alt={this.props.desc}/>
             </div>
             <div className="title"><span>{this.props.caption}</span></div>
           </Link>

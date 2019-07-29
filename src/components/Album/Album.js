@@ -17,7 +17,8 @@ class Album extends React.Component {
               </canvas>
               <img className="lazyautosizes lazyloaded"
                    data-sizes="auto"
-                   src={this.props.src}/>
+                   src={this.props.src}
+                   alt={this.props.desc}/>
             </div>
             <div className="title"><span>{this.props.title}</span></div>
           </Link>

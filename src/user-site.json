@@ -7,7 +7,7 @@
     },
     {
       "site": "telegram",
-      "link": ""
+      "link": "tg://resolve?domain=shuntikov"
     },
     {
       "site": "facebook",
@@ -22,8 +22,7 @@
     {
       "type": "page",
       "name": "Price",
-      "cover": "content/covers/price.jpg",
-      "homepage": true
+      "cover": "content/covers/price.jpg"
     },
     {
       "type": "album-collection",
@@ -46,7 +45,8 @@
         "wedding 14",
         "wedding 15",
         "wedding 16"
-      ]
+      ],
+      "homepage": true
     },
     {
       "type": "album-collection",

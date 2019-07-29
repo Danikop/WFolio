@@ -7,18 +7,18 @@ class SocialLinks extends React.Component {
   render() {
     return (
         <ul className="social-links">
-          {this.props.data.map(item => {
+          {this.props.data.map((item, i) => {
             let icon = {
               'vk': <FontAwesomeIcon icon={faVk} color='#fff'/>,
               'instagram': <FontAwesomeIcon icon={faInstagram} color='#fff'/>,
               'telegram': <FontAwesomeIcon icon={faTelegramPlane} color='#fff'/>,
               'facebook': <FontAwesomeIcon icon={faFacebookSquare} color='#fff'/>
             }[item.site];
-            console.log(icon);
-            return (<li className="social-item">
+            return (<li className="social-item" key={i}>
               <a title={item.link}
                  className="link"
                  target="_blank"
+                 rel="noopener noreferrer"
                  href={item.link}>
                 {icon}
               </a>

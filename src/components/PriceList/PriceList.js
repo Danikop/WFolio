@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDom from "react-dom";
 
 class PriceList extends React.Component {
   constructor(props) {
@@ -10,16 +9,6 @@ class PriceList extends React.Component {
   }
 
   componentDidMount() {
-    /*
-      axios.get('/wedding-albums')
-          .then(response => {
-              const images = response.data;
-              //console.log(images);
-              this.setState({
-                  images: images
-              })
-          });
-     */
   }
 
   render() {
