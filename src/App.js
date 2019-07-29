@@ -1,4 +1,3 @@
-import './App.css';
 import site from './site'
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
@@ -35,6 +34,9 @@ class App extends React.Component {
   }
 
   buildRoutesContent(json_site) {
+    let menu = <Menu>{this.menuItems}</Menu>;
+    let social = <SocialLinks data={site.social}/>;
+    let footer = <Footer/>;
     for (let item of json_site.menu) {
       let newComponent = null;
       switch (item.type) {
@@ -54,29 +56,36 @@ class App extends React.Component {
           }
           break;
         case 'album':
-          newComponent = <Album images={item.images} cover={item.cover} desc={item.desc}/>;
+          newComponent = <Album photos={item.images}/>;
           break;
         case 'album-collection':
-          let covers = item.albums.map((album, i) => <AlbumCover key={i} link={album.link}
-                                                                 cover={album.cover}
-                                                                 caption={album.name}
-                                                                 desc={album.desc}/>);
+          let covers = item.albums.map((albumData, i) => {
+            let template = <Template content={<Album photos={albumData.images}/>}
+                                     menu={menu}
+                                     sidebar={<SideBar img={albumData.cover}
+                                                       social={social}/>}
+                                     footer={footer}/>;
+            this.routes.push(<Route exact path={albumData.link} component={() => template}
+                                    key={this.routes.length}/>);
+            return <AlbumCover key={i} link={albumData.link}
+                               cover={albumData.cover}
+                               caption={albumData.name}
+                               desc={albumData.desc}/>
+          });
           newComponent = <AlbumContainer>{covers}</AlbumContainer>;
           break;
         default:
       }
-      let route = item.homepage ? '/' : item.link;
       this.menuItems.push({
         name: item.name,
-        link: route
+        link: item.link
       });
-      let template = <Template sidebarLogo={item.cover}
-                               content={newComponent}
-                               menu={<Menu>{this.menuItems}</Menu>}
+      let template = <Template content={newComponent}
+                               menu={menu}
                                sidebar={<SideBar img={item.cover}
-                                                 social={<SocialLinks data={site.social}/>}/>}
-                               footer={<Footer/>}/>;
-      this.routes.push(<Route exact path={route} component={() => template} key={this.routes.length}/>);
+                                                 social={social}/>}
+                               footer={footer}/>;
+      this.routes.push(<Route exact path={item.link} component={() => template} key={this.routes.length}/>);
     }
   }
 }

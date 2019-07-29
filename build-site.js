@@ -1,6 +1,7 @@
 const tr = require('transliteration');
 const fs = require('fs');
 const path = require('path');
+const sizeOf = require('image-size');
 
 let D = console.log;
 let J = x => D(JSON.stringify(x, null, 1));
@@ -21,6 +22,15 @@ function fs_to_json(dir) {
       }
 }
 
+function getImageInfo(path) {
+  let dimensions = sizeOf(path);
+  return {
+    src: path,
+    width: dimensions.width,
+    height: dimensions.height
+  }
+}
+
 function scan_albums_in_fs(root) {
   if (root.type === 'file')
     return [];
@@ -31,7 +41,7 @@ function scan_albums_in_fs(root) {
     else if (node.fileName === 'info.json')
       info = JSON.parse(fs.readFileSync(node.filePath));
     else
-      images.push(node.filePath);
+      images.push(getImageInfo(node.filePath));
   });
   if (info)
     albums.push({
@@ -64,7 +74,7 @@ for (let menuItem of user_site.menu) {
       let new_albums = [];
       menuItem.albums.forEach(albumName => {
         let match = albums.find(x => x.name === albumName);
-        if(match) new_albums.push(match);
+        if (match) new_albums.push(match);
       });
       menuItem.albums = new_albums;
       new_menu.push(menuItem);
@@ -72,7 +82,7 @@ for (let menuItem of user_site.menu) {
     default:
       break;
   }
-  menuItem.link = '/' + tr.slugify(menuItem.name);
+  menuItem.link = '/' + (menuItem.homepage ? '' : tr.slugify(menuItem.name));
 }
 
 user_site.menu = new_menu;
