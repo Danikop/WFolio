@@ -1,0 +1,16 @@
+.wrapper {
+    display: flex;
+}
+
+.one {
+    background-color: #00ad24;
+    height: 30px;
+    width: 30%;
+}
+
+.two {
+    height: 50px;
+
+    width: 70%;
+    background-color: red;
+}
