@@ -22,7 +22,13 @@
     {
       "type": "page",
       "name": "Price",
-      "cover": "content/covers/price.jpg"
+      "cover": "content/covers/price.jpg",
+      "images": [
+        "content/covers/price.jpg",
+        "content/covers/price.jpg",
+        "content/covers/price.jpg",
+        "content/covers/price.jpg"
+      ]
     },
     {
       "type": "album-collection",
@@ -64,9 +70,9 @@
       "description": "Бэкстейдж моих фотосъемок",
       "cover": "content/covers/backstage.jpg",
       "videos": [
-        "url-1",
-        "url-2",
-        "url-3"
+        "Uvt5TZy0aAc",
+        "kHBcVlqpvZ8",
+        "3pHC9zyiDW4"
       ]
     },
     {

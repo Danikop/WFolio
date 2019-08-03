@@ -49,7 +49,8 @@ function scan_albums_in_fs(root) {
       name: root.fileName,
       cover: info.cover ? path.join(root.filePath, info.cover) : images.length ? images[0] : null,
       images: images,
-      link: genLink(root.fileName)
+      link: genLink(root.fileName),
+      desc: info.desc
     });
   return albums;
 }

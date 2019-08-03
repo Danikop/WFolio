@@ -43,7 +43,8 @@ class App extends React.Component {
         case 'page':
           switch (item.name) {
             case 'Price':
-              newComponent = <PriceList/>;
+              newComponent = <PriceList images={item.images}
+                                        social={social}/>;
               break;
             case 'Backstage':
               newComponent = <BackStage videos={item.videos}/>;
@@ -60,7 +61,7 @@ class App extends React.Component {
           break;
         case 'album-collection':
           let covers = item.albums.map((albumData, i) => {
-            let template = <Template content={<Album photos={albumData.images}/>}
+            let template = <Template content={<Album photos={albumData.images} desc={albumData.desc}/>}
                                      menu={menu}
                                      sidebar={<SideBar img={albumData.cover}
                                                        social={social}/>}

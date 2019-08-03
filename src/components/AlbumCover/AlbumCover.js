@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './AlbumCover.css'
+import LazyLoad from 'react-lazyload';
 
 class AlbumCover extends React.Component {
   render() {
@@ -16,10 +17,12 @@ class AlbumCover extends React.Component {
                   style={{backgroundColor: '#89847c'}}
               >
               </canvas>
-              <img className="lazyautosizes lazyloaded" data-sizes="auto"
-                  //data-src={this.props.uri}
-                   src={this.props.cover}
-                   alt={this.props.desc}/>
+              <LazyLoad>
+                <img className="lazyautosizes lazyloaded" data-sizes="auto"
+                    //data-src={this.props.uri}
+                     src={this.props.cover}
+                     alt={this.props.desc}/>
+              </LazyLoad>
             </div>
             <div className="title"><span>{this.props.caption}</span></div>
           </Link>

@@ -1,6 +1,6 @@
 .section {
-
 }
+
 .contacts {
     width: 1050px;
     max-width: 100%;
@@ -20,4 +20,20 @@
 
 .person-img {
     border-radius: 50%;
+    width: 100%;
+}
+
+@media (max-width: 1169px) {
+    .contacts {
+        flex-direction: column;
+    }
+
+    .person-image {
+        height: 100px;
+        width: 100%;
+    }
+
+    .round-image {
+        width: 100%;
+    }
 }
