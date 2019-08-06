@@ -2,10 +2,12 @@ const tr = require('transliteration');
 const fs = require('fs');
 const path = require('path');
 const sizeOf = require('image-size');
+const ColorThief = require('color-thief');
 
 let D = console.log;
 let J = x => D(JSON.stringify(x, null, 1));
 let genLink = str => '/' + tr.slugify(str);
+const colorThief = new ColorThief();
 
 function fs_to_json(dir) {
   return fs.statSync(dir).isDirectory()
@@ -23,11 +25,14 @@ function fs_to_json(dir) {
 }
 
 function getImageInfo(path) {
+  console.log('getting info of', path);
   let dimensions = sizeOf(path);
+  let rgb = colorThief.getColor(path);
   return {
     src: path,
     width: dimensions.width,
-    height: dimensions.height
+    height: dimensions.height,
+    avg: `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`
   }
 }
 
@@ -47,7 +52,7 @@ function scan_albums_in_fs(root) {
     albums.push({
       type: 'album',
       name: root.fileName,
-      cover: info.cover ? path.join(root.filePath, info.cover) : images.length ? images[0] : null,
+      thumbnail: info.thumbnail ? getImageInfo(path.join(root.filePath, info.thumbnail)) : images.length ? getImageInfo(images[0].src) : null,
       images: images,
       link: genLink(root.fileName),
       desc: info.desc
@@ -68,7 +73,14 @@ for (let menuItem of user_site.menu) {
         new_menu.push(menuItem);
       }
       break;
-    case 'page':
+    case 'page-price':
+      menuItem.images = menuItem.images.map(x => getImageInfo(x));
+      menuItem.sidebar = getImageInfo(menuItem.sidebar);
+      new_menu.push(menuItem);
+      break;
+    case 'page-backstage':
+    case 'page-contacts':
+      menuItem.sidebar = getImageInfo(menuItem.sidebar);
       new_menu.push(menuItem);
       break;
     case 'album-collection':
@@ -78,6 +90,7 @@ for (let menuItem of user_site.menu) {
         if (match) new_albums.push(match);
       });
       menuItem.albums = new_albums;
+      menuItem.sidebar = getImageInfo(menuItem.sidebar);
       new_menu.push(menuItem);
       break;
     default:

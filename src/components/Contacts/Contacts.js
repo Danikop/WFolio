@@ -1,6 +1,7 @@
 import React from 'react';
 import './Contacts.css'
 import Section from "../Section/Section";
+import LazyImage from "../LazyImage/LazyImage";
 
 class Contacts extends React.Component {
   render() {
@@ -46,9 +47,14 @@ class Contacts extends React.Component {
 
             <div className="round-image">
               <a href="https://www.instagram.com/ruslan_polyakov_photo/" target="_blank">
-                <img alt="Контакты фотографа Руслан Поляков — Фотограф Краснодар Италия"
-                     className="person-img"
-                     src="content/author.jpg"/>
+                <LazyImage alt="Контакты фотографа Шунтиков Сергей — Фотограф"
+                           className="person-img"
+                           src="content/author.jpg"
+                           style={{
+                             borderRadius: '50%',
+                             overflow: 'hidden'
+                           }}
+                           placeholderColor='#00ff00'/>
               </a>
             </div>
           </div>

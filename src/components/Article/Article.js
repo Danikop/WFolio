@@ -5,8 +5,8 @@ class Article extends React.Component {
   render() {
     return (
         <section className='article'>
+          <h1>{this.props.title}</h1>
           <p>
-            <h1>{this.props.title}</h1>
             {this.props.text}
           </p>
         </section>

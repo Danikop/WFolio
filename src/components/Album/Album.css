@@ -97,3 +97,18 @@
 canvas {
     display: inline-block;
 }
+
+
+.lazyload {
+    opacity: 1;
+    background: #f7f7f7;
+}
+.lazyloaded {
+    opacity: 1;
+    transition: opacity 300ms;
+}
+.lazyloading {
+    opacity: 1;
+    transition: opacity 300ms;
+    background: #f7f7f7;
+}

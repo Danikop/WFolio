@@ -1,30 +1,26 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './AlbumCover.css'
-import LazyLoad from 'react-lazyload';
+import LazyImage from "../LazyImage/LazyImage";
 
 class AlbumCover extends React.Component {
   render() {
+    let thumbnail = this.props.thumbnail;
     return (
-        <div className="item">
-          <Link className="cover-link" to={this.props.link}>
-            <div className="lazy-image js-lazy-image -loaded"
-                 data-aspect="1">
-              <canvas
-                  className="placeholder"
-                  width={2560}
-                  height={2560}
-                  style={{backgroundColor: '#89847c'}}
-              >
-              </canvas>
-              <LazyLoad>
-                <img className="lazyautosizes lazyloaded" data-sizes="auto"
-                    //data-src={this.props.uri}
-                     src={this.props.cover}
-                     alt={this.props.desc}/>
-              </LazyLoad>
+        <div className='album-cover'>
+          <Link className='cover-link' to={this.props.link}>
+            <div className='cover-content'>
+              <LazyImage src={thumbnail.src}
+                         alt={this.props.desc}
+                         style={{
+                           width: '100%',
+                           height: '100%'
+                         }}
+                         placeholderColor={thumbnail.avg}/>
+              <div className='cover-title'>
+                <span>{this.props.caption}</span>
+              </div>
             </div>
-            <div className="title"><span>{this.props.caption}</span></div>
           </Link>
         </div>
     );

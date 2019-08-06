@@ -21,7 +21,10 @@ class App extends React.Component {
     this.state = {
       sidebarLogo: null
     };
-    this.buildRoutesContent(site);
+    this.menu = <Menu>{this.menuItems}</Menu>;
+    this.social = <SocialLinks data={site.social}/>;
+    this.footer = <Footer/>;
+    this.buildRoutesContent(site.menu);
   }
 
   render() {
@@ -33,60 +36,71 @@ class App extends React.Component {
     );
   }
 
-  buildRoutesContent(json_site) {
-    let menu = <Menu>{this.menuItems}</Menu>;
-    let social = <SocialLinks data={site.social}/>;
-    let footer = <Footer/>;
-    for (let item of json_site.menu) {
+  renderPage(sidebarImg, content) {
+    return <Template content={content}
+                     menu={this.menu}
+                     sidebar={<SideBar background={sidebarImg} social={this.social}/>}
+                     footer={this.footer}/>;
+  }
+
+  renderAlbumPage(albumData) {
+    let content = <Album photos={albumData.images} desc={albumData.desc}/>;
+    return this.renderPage(albumData.thumbnail, content);
+  }
+
+  renderAlbumCollectionPage(collectionData) {
+    let covers = collectionData.albums.map((albumData, i) => {
+      return <AlbumCover key={i}
+                         link={albumData.link}
+                         thumbnail={albumData.thumbnail}
+                         caption={albumData.name}
+                         desc={albumData.desc}/>
+    });
+    let content = <AlbumContainer>{covers}</AlbumContainer>;
+    return this.renderPage(collectionData.sidebar, content);
+  }
+
+  renderContactsPage(data) {
+    return this.renderPage(data.sidebar, <Contacts/>);
+  }
+
+  renderBackstagePage(data) {
+    return this.renderPage(data.sidebar, <BackStage videos={data.videos}/>)
+  }
+
+  renderPricePage(data) {
+    let content = <PriceList images={data.images} social={this.social}/>;
+    return this.renderPage(data.sidebar, content);
+  }
+
+  buildRoutesContent(elementsArray) {
+    for (let item of elementsArray) {
       let newComponent = null;
       switch (item.type) {
-        case 'page':
-          switch (item.name) {
-            case 'Price':
-              newComponent = <PriceList images={item.images}
-                                        social={social}/>;
-              break;
-            case 'Backstage':
-              newComponent = <BackStage videos={item.videos}/>;
-              break;
-            case 'Contacts':
-              newComponent = <Contacts/>;
-              break;
-            default: {
-            }
-          }
+        case 'page-price':
+          newComponent = this.renderPricePage(item);
+          break;
+        case 'page-backstage':
+          newComponent = this.renderBackstagePage(item);
+          break;
+        case 'page-contacts':
+          newComponent = this.renderContactsPage(item);
           break;
         case 'album':
-          newComponent = <Album photos={item.images}/>;
+          newComponent = this.renderAlbumPage(item);
           break;
         case 'album-collection':
-          let covers = item.albums.map((albumData, i) => {
-            let template = <Template content={<Album photos={albumData.images} desc={albumData.desc}/>}
-                                     menu={menu}
-                                     sidebar={<SideBar img={albumData.cover}
-                                                       social={social}/>}
-                                     footer={footer}/>;
-            this.routes.push(<Route exact path={albumData.link} component={() => template}
-                                    key={this.routes.length}/>);
-            return <AlbumCover key={i} link={albumData.link}
-                               cover={albumData.cover}
-                               caption={albumData.name}
-                               desc={albumData.desc}/>
-          });
-          newComponent = <AlbumContainer>{covers}</AlbumContainer>;
+          newComponent = this.renderAlbumCollectionPage(item);
+          this.buildRoutesContent(item.albums);
           break;
         default:
       }
-      this.menuItems.push({
-        name: item.name,
-        link: item.link
-      });
-      let template = <Template content={newComponent}
-                               menu={menu}
-                               sidebar={<SideBar img={item.cover}
-                                                 social={social}/>}
-                               footer={footer}/>;
-      this.routes.push(<Route exact path={item.link} component={() => template} key={this.routes.length}/>);
+      if (item.inMenu)
+        this.menuItems.push({
+          name: item.name,
+          link: item.link
+        });
+      this.routes.push(<Route exact path={item.link} component={() => newComponent} key={this.routes.length}/>);
     }
   }
 }

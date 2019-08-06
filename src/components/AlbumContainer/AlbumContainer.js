@@ -4,7 +4,7 @@ import './AlbumContainer.css'
 class AlbumContainer extends React.Component {
     render() {
         return (
-            <div className="listing js-listing" data-format="square">
+            <div className="album-container">
                 {this.props.children}
             </div>
         );

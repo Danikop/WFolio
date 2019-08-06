@@ -1,7 +1,7 @@
 import React from 'react';
 import Section from "../Section/Section";
 import './PriceList.css'
-import SocialLinks from "../SocialLinks/SocialLinks";
+import LazyImage from "../LazyImage/LazyImage";
 
 class PriceList extends React.Component {
 
@@ -10,8 +10,10 @@ class PriceList extends React.Component {
         <div className='price-list'>
           {this.props.images.map((img, i) =>
               <Section key={i}>
-                <img className='price-item'
-                     src={img}/>
+                <LazyImage className='price-item'
+                           src={img.src}
+                           style={{width: '100%', height: '100%'}}
+                           placeholderColor={img.avg}/>
               </Section>
           )}
           <Section>

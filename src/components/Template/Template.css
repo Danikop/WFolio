@@ -5,7 +5,7 @@ html, body, #root, .app, .main {
 .main {
     display: flex;
     flex-direction: column;
-    background: #242526;
+    background: #454545;
 }
 
 .content {
@@ -30,7 +30,7 @@ html, body, #root, .app, .main {
     top: 0;
     z-index: 200;
     padding: 20px 0;
-    background: #242526BF;
+    background: #454545BF;
 }
 
 ::-webkit-scrollbar {

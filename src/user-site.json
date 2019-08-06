@@ -1,5 +1,73 @@
 {
   "theme": "theme-white",
+  "menu": [
+    {
+      "type": "page-price",
+      "name": "Price",
+      "sidebar": "content/covers/price.jpg",
+      "images": [
+        "content/covers/price.jpg",
+        "content/covers/price.jpg",
+        "content/covers/price.jpg",
+        "content/covers/price.jpg"
+      ],
+      "inMenu": true
+    },
+    {
+      "type": "album-collection",
+      "name": "wedding",
+      "sidebar": "content/covers/wedding.jpg",
+      "albums": [
+        "крутая свадьба",
+        "отметили так отметили",
+        "могло быть и лучше",
+        "лучше некуда",
+        "какое-то красивое название",
+        "свадьба",
+        "похоже на свадьбу",
+        "wedding 8",
+        "wedding 9",
+        "wedding 10",
+        "wedding 11",
+        "wedding 12",
+        "wedding 13",
+        "wedding 14",
+        "wedding 15",
+        "wedding 16"
+      ],
+      "homepage": true,
+      "inMenu": true
+    },
+    {
+      "type": "album-collection",
+      "name": "fashion",
+      "sidebar": "content/covers/fashion.jpg",
+      "albums": [
+        "fashion 1",
+        "fashion 2",
+        "fashion 3"
+      ],
+      "inMenu": true
+    },
+    {
+      "type": "page-backstage",
+      "name": "Backstage",
+      "description": "Бэкстейдж моих фотосъемок",
+      "sidebar": "content/covers/backstage.jpg",
+      "videos": [
+        "Uvt5TZy0aAc",
+        "kHBcVlqpvZ8",
+        "3pHC9zyiDW4"
+      ],
+      "inMenu": true
+    },
+    {
+      "type": "page-contacts",
+      "name": "Contacts",
+      "sidebar": "content/covers/contacts.jpg",
+      "inMenu": true
+    }
+  ],
   "social": [
     {
       "site": "vk",
@@ -16,69 +84,6 @@
     {
       "site": "instagram",
       "link": "https://www.instagram.com/shuntikov/"
-    }
-  ],
-  "menu": [
-    {
-      "type": "page",
-      "name": "Price",
-      "cover": "content/covers/price.jpg",
-      "images": [
-        "content/covers/price.jpg",
-        "content/covers/price.jpg",
-        "content/covers/price.jpg",
-        "content/covers/price.jpg"
-      ]
-    },
-    {
-      "type": "album-collection",
-      "name": "wedding",
-      "cover": "content/covers/wedding.jpg",
-      "albums": [
-        "wedding 1",
-        "wedding 2",
-        "wedding 3",
-        "wedding 4",
-        "wedding 5",
-        "wedding 6",
-        "wedding 7",
-        "wedding 8",
-        "wedding 9",
-        "wedding 10",
-        "wedding 11",
-        "wedding 12",
-        "wedding 13",
-        "wedding 14",
-        "wedding 15",
-        "wedding 16"
-      ],
-      "homepage": true
-    },
-    {
-      "type": "album-collection",
-      "name": "fashion",
-      "cover": "content/covers/fashion.jpg",
-      "albums": [
-        "fashion 1",
-        "fashion 2",
-        "fashion 3"
-      ]
-    },
-    {
-      "type": "page",
-      "name": "Backstage",
-      "description": "Бэкстейдж моих фотосъемок",
-      "cover": "content/covers/backstage.jpg",
-      "videos": [
-        "Uvt5TZy0aAc",
-        "kHBcVlqpvZ8",
-        "3pHC9zyiDW4"
-      ]
-    },
-    {
-      "type": "page",
-      "name": "Contacts",
-      "cover": "content/covers/contacts.jpg"
     }
   ]
 }
