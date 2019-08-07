@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/WFolio/static/css/main.41287231.chunk.css",
-    "main.js": "/WFolio/static/js/main.d60774d5.chunk.js",
-    "main.js.map": "/WFolio/static/js/main.d60774d5.chunk.js.map",
+    "main.css": "/WFolio/static/css/main.4cfc7eeb.chunk.css",
+    "main.js": "/WFolio/static/js/main.394023f7.chunk.js",
+    "main.js.map": "/WFolio/static/js/main.394023f7.chunk.js.map",
     "runtime~main.js": "/WFolio/static/js/runtime~main.b445d94f.js",
     "runtime~main.js.map": "/WFolio/static/js/runtime~main.b445d94f.js.map",
     "static/js/2.30caae3b.chunk.js": "/WFolio/static/js/2.30caae3b.chunk.js",
     "static/js/2.30caae3b.chunk.js.map": "/WFolio/static/js/2.30caae3b.chunk.js.map",
     "index.html": "/WFolio/index.html",
-    "precache-manifest.8a547e702c0fe5b2c40f080a2a1e0ae5.js": "/WFolio/precache-manifest.8a547e702c0fe5b2c40f080a2a1e0ae5.js",
+    "precache-manifest.e78119b476f0219a83b9d5212f8117bb.js": "/WFolio/precache-manifest.e78119b476f0219a83b9d5212f8117bb.js",
     "service-worker.js": "/WFolio/service-worker.js",
-    "static/css/main.41287231.chunk.css.map": "/WFolio/static/css/main.41287231.chunk.css.map",
+    "static/css/main.4cfc7eeb.chunk.css.map": "/WFolio/static/css/main.4cfc7eeb.chunk.css.map",
     "static/media/logo.png": "/WFolio/static/media/logo.bf6a7a18.png"
   }
 }
