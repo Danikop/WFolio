@@ -12,7 +12,6 @@
 
 .lazyload,
 .lazyloading {
-    position: absolute;
     opacity: 0;
 }
 

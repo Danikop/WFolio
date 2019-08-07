@@ -70,6 +70,7 @@ for (let menuItem of user_site.menu) {
       let match = albums.find(x => x.name === menuItem.name);
       if (match) {
         menuItem.images = match.images; // deps
+        menuItem.thumbnail = match.thumbnail;
         new_menu.push(menuItem);
       }
       break;

@@ -28,6 +28,7 @@ class App extends React.Component {
   }
 
   render() {
+    //<BrowserRouter basename='WFolio'>
     console.log(JSON.stringify(site, null, 4));
     return (
         <BrowserRouter>

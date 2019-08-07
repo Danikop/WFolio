@@ -10,9 +10,8 @@ class PriceList extends React.Component {
         <div className='price-list'>
           {this.props.images.map((img, i) =>
               <Section key={i}>
-                <LazyImage className='price-item'
-                           src={img.src}
-                           style={{width: '100%', height: '100%'}}
+                <LazyImage src={img.src}
+                           style={{width: '100%'}}
                            placeholderColor={img.avg}/>
               </Section>
           )}

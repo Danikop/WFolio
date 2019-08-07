@@ -66,6 +66,11 @@
       "name": "Contacts",
       "sidebar": "content/covers/contacts.jpg",
       "inMenu": true
+    },
+    {
+      "type": "album",
+      "name": "art",
+      "inMenu": true
     }
   ],
   "social": [
