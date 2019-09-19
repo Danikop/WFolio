@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ccb56378a0aa07f1873114f7ec5de89e",
+    "revision": "2cfadd54658d7fe7a31eaef47b07644d",
     "url": "/WFolio/index.html"
   },
   {
@@ -8,15 +8,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WFolio/static/css/2.dd61c471.chunk.css"
   },
   {
-    "revision": "fe9edefd0420eef9e518",
-    "url": "/WFolio/static/css/main.1ec215c5.chunk.css"
+    "revision": "1c5dd00059f41233da64",
+    "url": "/WFolio/static/css/main.acda25dc.chunk.css"
   },
   {
     "revision": "51c351f8202ac519fdd4",
     "url": "/WFolio/static/js/2.cbbe7b2b.chunk.js"
   },
   {
-    "revision": "fe9edefd0420eef9e518",
+    "revision": "1c5dd00059f41233da64",
     "url": "/WFolio/static/js/main.9ce931ee.chunk.js"
   },
   {
